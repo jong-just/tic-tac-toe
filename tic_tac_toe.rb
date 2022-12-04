@@ -163,7 +163,7 @@ def validify_hand(input)
     "break"
   elsif input == ""
     false
-  elsif input.upcase == input || input.downcase == input
+  elsif input.upcase != input || input.downcase != input
     false
   elsif input.to_i.between?(0, 2)
     true
