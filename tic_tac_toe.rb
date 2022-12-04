@@ -79,7 +79,6 @@ def start_game(x, o, board)
   end_game = false
 
   loop do
-    puts GameBoard.turn_count
     if GameBoard.turn_count.to_i == 9
       puts "Tie game."
       break
@@ -163,7 +162,7 @@ def validify_hand(input)
     "break"
   elsif input == ""
     false
-  elsif input.upcase != input || input.downcase != input
+  elsif !input.ord.between?(47, 58)
     false
   elsif input.to_i.between?(0, 2)
     true
